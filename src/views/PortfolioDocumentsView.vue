@@ -1,0 +1,48 @@
+<template>
+  <main class="documents-page">
+    <h1>Portfolio documenten - WPL1</h1>
+
+    <ul>
+      <li>
+        <a href="/portfolio/situering-profiel-dvo.pdf" target="_blank" rel="noopener">
+          Situering binnen profiel Digitale Vormgever
+        </a>
+      </li>
+
+      <li>
+        <a href="/portfolio/eindreflectie-wpl1-dvo.pdf" target="_blank" rel="noopener">
+          Eindreflectie WPL1 DVO
+        </a>
+      </li>
+    </ul>
+  </main>
+</template>
+
+<style scoped>
+.documents-page {
+  max-width: 680px;
+  padding-top: clamp(28px, 4vw, 70px);
+  padding-bottom: 80px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0 0 24px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 16px;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding-bottom: 2px;
+}
+</style>

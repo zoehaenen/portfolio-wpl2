@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--suppress LanguageDetectionInspection -->
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zoë Haenen - Projecten</title>
+
+  <link rel="stylesheet" href="projecten.css">
+  <script src="menu.js" defer></script>
+  <script src="projecten-detail.js" defer></script>
+  <link rel="stylesheet" href="https://use.typekit.net/fcq1hhb.css">
+</head>
+
+<body>
+
+<!-- HEADER (zelfde als index.html) -->
+<div class="header" id="siteHeader">
+  <div class="nav-links nav-left">
+    <a class="nav-link" href="projecten.html"><div class="projecten">PROJECTEN</div></a>
+    <a class="nav-link" href="about.html"><div class="about">OVER MIJ</div></a>
+
+  </div>
+
+  <a href="index.html" class="brand-link">
+    <div class="naam-occupatie">
+      <div class="naam">ZOË HAENEN</div>
+      <div class="occupatie">TOEKOMSTIG FRONT-END DEVELOPER</div>
+    </div>
+  </a>
+
+  <div class="nav-links nav-right">
+    <a href="https://www.instagram.com/koetje0/" target="_blank" class="instagram-link">
+      <div class="instagram">INSTAGRAM</div>
+    </a>
+    <a href="contact.html" class="nav-link">
+      <div class="contact">CONTACT</div>
+    </a>
+
+  </div>
+
+  <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+  </button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a href="projecten.html" class="mobile-item">PROJECTEN</a>
+      <a href="about.html" class="mobile-item">OVER MIJ</a>
+      <a href="https://www.instagram.com/koetje0/" target="_blank" class="mobile-item">INSTAGRAM</a>
+      <a href="contact.html" class="mobile-item">CONTACT</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- PROJECTEN PAGINA LAYOUT -->
+<main class="projecten-page">
+
+  <aside class="body-left">
+    <nav class="project-container" aria-label="Project categorieën">
+
+      <!-- Klik hierop = terug naar OVERZICHT -->
+      <div class="project-titel">
+        <a class="cat-link" href="#overzicht" id="js-overview-link">projecten</a>
+      </div>
+
+      <ol class="project-list">
+        <!-- Deze openen DETAIL view i.p.v. scrollen -->
+        <li><a class="cat-link js-open-detail" href="#scripting" data-project="scripting">scripting</a></li>
+        <li><a class="cat-link js-open-detail" href="#ui" data-project="ui">UI design</a></li>
+        <li><a class="cat-link js-open-detail" href="#fotografie" data-project="fotografie">fotografie</a></li>
+        <li><a class="cat-link js-open-detail" href="#animatie" data-project="animatie">animatie</a></li>
+        <li><a class="cat-link js-open-detail" href="#schetsboek" data-project="schetsboek">schetsboek</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+
+  <section class="body-right">
+
+    <!-- =========================
+         OVERZICHT (blijft zoals het is)
+    ========================= -->
+    <div id="view-overview">
+
+      <article class="project js-project-card" data-project="scripting">
+        <div class="project-thumbnail">
+          <img class="project-img" src="afbeeldingen/il-vicolo-screen.png" alt="Il Vicolo project preview">
+        </div>
+        <div class="project-omschrijving-container">
+          <div class="project-titel">Scripting</div>
+          <div class="project-omschrijving">
+            Binnen het vak Scripting ontwikkelde ik een interactieve take-away website met HTML, CSS en JavaScript, zonder frameworks. De website toont menu-items dynamisch en bevat filtering, sortering en een winkelmand beheerd via DOM-manipulatie en localStorage. Dit project benadrukt mijn groei in gestructureerd JavaScript en logisch denken binnen een front-end context.
+          </div>
+        </div>
+      </article>
+
+      <article class="project js-project-card" data-project="ui">
+        <div class="project-thumbnail">
+          <img src="afbeeldingen/UI-design_project_thumbnail.jpeg" alt="UI design project preview" class="project-img">
+        </div>
+        <div class="project-omschrijving-container">
+          <div class="project-titel">UI design</div>
+          <div class="project-omschrijving">
+            Binnen het vak UI Design ontwierp ik de user interface van een digitale toepassing, van wireframes tot een uitgewerkt visueel design. Ik werkte een volledige taskflow en een eigen homepagina uit in Figma, met aandacht voor branding, usability en consistentie.
+          </div>
+        </div>
+      </article>
+
+      <article class="project js-project-card" data-project="fotografie">
+        <div class="project-thumbnail">
+          <img src="afbeeldingen/foto%20analoog/Ilford_BW_400%20(6).jpg" alt="berglandschap fotografie project preview" class="project-img">
+        </div>
+        <div class="project-omschrijving-container">
+          <div class="project-titel">Fotografie</div>
+          <div class="project-omschrijving">
+            Een persoonlijke collectie analoge fotografie, waarin ik experimenteer met licht, compositie en sfeer. Door te werken met film laat ik ruimte voor imperfectie en toeval, wat elk beeld een eigen karakter geeft.
+          </div>
+        </div>
+      </article>
+
+      <article class="project js-project-card" data-project="animatie">
+        <div class="project-thumbnail">
+          <img class="project-img" src="afbeeldingen/Untitled_Artwork 3.jpeg" alt="">
+        </div>
+        <div class="project-omschrijving-container">
+          <div class="project-titel">Animatie</div>
+          <div class="project-omschrijving">
+            Een selectie van animatieprojecten waarin ik experimenteer met narratief, timing en karakteranimatie. De focus ligt op korte verhalen, eenvoudige maar expressieve vormgeving en het verkennen van beweging als vertelmiddel.
+          </div>
+        </div>
+      </article>
+
+      <article class="project js-project-card" data-project="schetsboek">
+        <div class="project-thumbnail">
+          <img class="project-img" src="afbeeldingen/schetsboek/schetsboek23.jpeg" alt="">
+        </div>
+        <div class="project-omschrijving-container">
+          <div class="project-titel">schetsboek</div>
+          <div class="project-omschrijving">
+            Een selectie uit mijn schetsboeken/projecten voor mijn schetsboek, waarin ik ideeën onderzoek, vormen verken en visueel denk. De tekeningen tonen mijn proces: van snelle observaties tot meer uitgewerkte studies.
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+
+    <!-- =========================
+         DETAIL “PAGINA’S” (nieuw, in body-right)
+         Hier kan je later extra secties/beelden toevoegen
+    ========================= -->
+
+    <div id="view-detail-scripting" class="is-hidden">
+      <article class="project project-detail">
+
+        <div class="project-thumbnail">
+          <img
+              class="project-img"
+              src="afbeeldingen/il-vicolo-screen.png"
+              alt="Il Vicolo project preview"
+              loading="lazy"
+          >
+        </div>
+        <header class="project-header">
+          <div class="project-titel">Scripting</div>
+        </header>
+        <div class="project-omschrijving-container">
+          <div class="project-omschrijving">
+            <p>
+              Il Vicolo is een fictieve take-away/restaurantwebsite die ik ontwikkelde binnen het vak Scripting.
+              Het project focust op het dynamisch weergeven van menu-items, filtering en sortering, en het beheren
+              van een winkelmand via pure JavaScript, zonder frameworks. State zoals het winkelmandje, het gerecht
+              van de dag, adminstatus en promotiecodes wordt bijgehouden via localStorage, waardoor interacties
+              persistent blijven over pagina’s heen.
+            </p>
+
+            <p>
+              Naast de basisvereisten implementeerde ik uitbreidingen zoals een admin login om het gerecht van de
+              dag aan te passen, promotiecodes met korting, en een aparte winkelmandpagina met overzicht en
+              prijsberekening. Niet alle uitbreidingen werden afgewerkt door tijdsgebrek, maar de gemaakte keuzes
+              en beperkingen tonen mijn leerproces en inzicht in DOM-manipulatie, event handling en state management
+              binnen een realistische front-end context.
+            </p>
+          </div>
+
+          <div class="project-links">
+            <a
+                class="project-linkout"
+                href="https://scripting-takeaway-project.netlify.app"
+                target="_blank"
+                rel="noopener"
+            >
+              OPEN LIVE SITE →
+            </a>
+
+            <div class="project-platform-note">
+              Enkel gemaakt voor desktop.
+            </div>
+          </div>
+
+        </div>
+      </article>
+    </div>
+
+
+    <div id="view-detail-ui" class="is-hidden">
+      <article class="project project-detail">
+
+        <!-- TITEL + UITLEG BOVEN -->
+        <header class="project-header">
+          <div class="project-titel">UI design</div>
+        </header>
+
+        <div class="project-omschrijving-container">
+          <div class="project-omschrijving">
+            <p>
+              Binnen het vak UI Design werkte ik in groep aan het ontwerp van een digitale toepassing, van concept en sitemap tot wireframes en een uitgewerkt visueel design. Ik was individueel verantwoordelijk voor één taskflow en een eigen uitwerking van de homepagina, uitgewerkt in Figma voor desktop en mobile. Het project focuste op usability, consistentie en branding, en resulteerde in een professioneel UI-design onderbouwd met duidelijke flows en componenten.
+            </p>
+          </div>
+
+          <div class="project-links">
+            <div class="project-platform-note">
+              Project in progress
+            </div>
+          </div>
+        </div>
+
+        <!-- PDF ONDERAAN -->
+        <div class="ui-pdf-wrapper">
+          <iframe
+              src="afbeeldingen/doc-gecomprimeerd.pdf"
+              title="UI design case document"
+              loading="lazy"
+          ></iframe>
+        </div>
+
+      </article>
+    </div>
+
+
+    <div id="view-detail-fotografie" class="is-hidden">
+      <article class="project project-detail">
+
+        <header class="project-header">
+          <div class="project-titel">Fotografie</div>
+        </header>
+
+        <div class="project-omschrijving-container">
+          <div class="project-omschrijving">
+            <p>
+              Deze fotoreeks is een persoonlijke collectie analoge fotografie, waarin ik experimenteer met licht, compositie en sfeer. Ik werkte met verschillende camera’s, waaronder de Canon AE-1 Program en de Pentax Zoom P280, en gebruikte diverse filmsoorten om te spelen met kleur, contrast en korrel. De negatieven werden digitaal gescand met een Plustek OpticFilm 8100, waarbij ik veel aandacht besteedde aan het bewaren van het karakter van film. Door bewust analoog te werken laat ik ruimte voor toeval en imperfectie, wat elk beeld een eigen, tastbare identiteit geeft.
+            </p>
+          </div>
+        </div>
+
+        <!-- GALERIJ 1: ZWART-WIT -->
+        <section class="photo-section" aria-label="Zwart-wit galerij">
+          <h3 class="photo-section-title">zwart-wit</h3>
+
+          <div
+              class="photo-grid js-gallery"
+              data-gallery="bw"
+              id="bwGallery"
+          ></div>
+        </section>
+
+
+        <!-- GALERIJ 2: KLEUR -->
+        <section class="photo-section" aria-label="Kleur galerij">
+          <h3 class="photo-section-title">kleur</h3>
+
+          <div
+              class="photo-grid js-gallery"
+              data-gallery="color"
+              id="colorGallery"
+          ></div>
+        </section>
+
+
+
+      </article>
+    </div>
+
+
+    <div id="view-detail-animatie" class="is-hidden">
+      <article class="project project-detail">
+
+        <!-- PAGINATITEL + ALGEMENE OMSCHRIJVING -->
+        <header class="project-header">
+          <div class="project-titel">Animatie</div>
+        </header>
+
+        <div class="project-omschrijving-container">
+          <div class="project-omschrijving">
+            <p>
+              Een selectie van animatieprojecten waarin ik experimenteer met narratief,
+              timing en karakteranimatie. De focus ligt op korte verhalen, eenvoudige maar
+              expressieve vormgeving en het verkennen van beweging als vertelmiddel.
+            </p>
+          </div>
+        </div>
+
+        <!-- =========================
+             PROJECT 1 – KRUIPKRACHT
+        ========================= -->
+        <section class="animation-project">
+          <h3 class="animation-title">Kruipkracht</h3>
+
+          <div class="animation-video">
+            <iframe
+                src="https://player.vimeo.com/video/1083956273"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+                title="Kruipkracht – animatie"
+            ></iframe>
+          </div>
+
+          <p class="animation-description">
+            Een man gaat vissen, maar zijn wormen zijn op. Hij gaat op avontuur en vindt
+            een nieuwe voorraad. Maar in alle haast blijft één worm achter, over het hoofd
+            gezien. Terwijl de man vrolijk verder vist, besluit deze worm zijn eigen pad
+            te kiezen… met onverwachte gevolgen.
+          </p>
+        </section>
+
+        <!-- =========================
+             PROJECT 2 – CONNECTED
+        ========================= -->
+        <section class="animation-project">
+          <h3 class="animation-title">Connected</h3>
+
+          <div class="animation-video">
+            <iframe
+                src="https://player.vimeo.com/video/1083959893"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+                title="Connected – animatie"
+            ></iframe>
+          </div>
+
+          <p class="animation-description">
+            Een korte animatie rond verbondenheid en afstand, waarin beweging en ritme
+            centraal staan. Het project onderzoekt hoe eenvoudige vormen en timing
+            emotie kunnen overbrengen zonder woorden.
+          </p>
+        </section>
+
+        <!-- =========================
+             PROJECT 3 – NOM
+        ========================= -->
+        <section class="animation-project">
+          <h3 class="animation-title">Nom</h3>
+
+          <div class="animation-video">
+            <iframe
+                src="https://www.youtube.com/embed/bIjibxpSVo0"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                loading="lazy"
+                title="Nom – animatie"
+            ></iframe>
+          </div>
+
+          <p class="animation-description">
+            Een speels animatie-experiment waarin timing, herhaling en eenvoudige actie
+            de basis vormen van het verhaal.
+          </p>
+        </section>
+
+        <!-- =========================
+             PROJECT 4 – STAPPEN
+        ========================= -->
+        <section class="animation-project steps">
+          <h3 class="animation-title">Stappen</h3>
+
+          <p class="animation-description">
+            Een reeks korte animaties waarin beweging stap voor stap wordt opgebouwd.
+            Elk fragment onderzoekt een volgende fase binnen dezelfde beweging.
+          </p>
+
+          <div class="step-item">
+            <div class="animation-video">
+              <iframe src="https://player.vimeo.com/video/1083960784" allowfullscreen></iframe>
+            </div>
+            <p class="animation-description">Stap 1</p>
+          </div>
+
+          <div class="step-item is-right">
+            <div class="animation-video">
+              <iframe src="https://player.vimeo.com/video/1083960818" allowfullscreen></iframe>
+            </div>
+            <p class="animation-description">Stap 2</p>
+          </div>
+
+          <div class="step-item">
+            <div class="animation-video">
+              <iframe src="https://player.vimeo.com/video/1083960870" allowfullscreen></iframe>
+            </div>
+            <p class="animation-description">Stap 3</p>
+          </div>
+
+          <div class="step-item is-right">
+            <div class="animation-video">
+              <iframe src="https://player.vimeo.com/video/1083960834" allowfullscreen></iframe>
+            </div>
+            <p class="animation-description">Stap 4</p>
+          </div>
+
+          <div class="step-item">
+            <div class="animation-video">
+              <iframe src="https://player.vimeo.com/video/1083960945" allowfullscreen></iframe>
+            </div>
+            <p class="animation-description">Stap 5</p>
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+
+
+    <div id="view-detail-schetsboek" class="is-hidden">
+      <article class="project project-detail">
+
+        <header class="project-header">
+          <div class="project-titel">Schetsboek</div>
+        </header>
+
+        <div class="project-omschrijving-container">
+          <div class="project-omschrijving">
+            <p>
+              Een selectie uit mijn schetsboeken/projecten voor mijn schetsboek, waarin ik ideeën onderzoek, vormen verken
+              en visueel denk. De tekeningen tonen mijn proces: van snelle observaties
+              tot meer uitgewerkte studies.
+            </p>
+          </div>
+        </div>
+
+        <!-- GALERIJ -->
+        <section class="photo-section" aria-label="Schetsboek galerij">
+          <h3 class="photo-section-title">selectie</h3>
+
+          <div
+              class="photo-grid js-gallery"
+              data-gallery="schetsboek"
+              id="schetsboekGallery"
+          ></div>
+
+        </section>
+
+      </article>
+    </div>
+
+
+  </section>
+
+</main>
+
+</body>
+</html>
