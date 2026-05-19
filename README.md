@@ -9,7 +9,7 @@ De portfolio bevat zowel digitale projecten (front-end, UI design) als creatief 
 
 ## Live versie
 
-🔗 https://webpxl.github.io/41dvo1070-werkplekleren-1-portfolio-25-26-grdvo-zoehaenen/
+🔗 https://zoehaenen.github.io/portfolio-wpl2/
 
 ---
 
@@ -93,7 +93,7 @@ De **eindreflectie en situering** van dit project zijn beschikbaar via een apart
 
 Je vindt deze via de volgende link:
 
-https://webpxl.github.io/41dvo1070-werkplekleren-1-portfolio-25-26-grdvo-zoehaenen/portfolio/portfolio.html
+https://zoehaenen.github.io/portfolio-wpl2/portfolio
 
 Deze pagina bevat:
 - de **situering** van het portfolio binnen Werkplekleren 1
@@ -127,6 +127,5 @@ De portfolio wordt verder aangevuld en verfijnd tijdens het academiejaar.
 Student Digitale Vormgeving — PXL  
 📸 Analoge fotografie · 🎞 Animatie · 💻 Front-end development  
 📷 Instagram: https://www.instagram.com/koetje0/
-
 
 

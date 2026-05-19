@@ -14,6 +14,7 @@ const props = defineProps({
 
 const emit = defineEmits(['open-gallery'])
 
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
 const projectByKey = Object.fromEntries(projectSummaries.map((project) => [project.key, project]))
 </script>
 
@@ -93,7 +94,7 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
 
     <div class="ui-pdf-wrapper">
       <iframe
-        src="/afbeeldingen/doc-gecomprimeerd.pdf"
+        :src="asset('afbeeldingen/doc-gecomprimeerd.pdf')"
         title="UI design case document"
         loading="lazy"
       ></iframe>
@@ -201,7 +202,7 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
 
       <div class="wpl-pdf-wrapper">
         <iframe
-          src="/portfolio/homepage-wireframe.pdf"
+          :src="asset('portfolio/homepage-wireframe.pdf')"
           title="Homepage wireframe Missie Maasland"
           loading="lazy"
         ></iframe>

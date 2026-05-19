@@ -1,3 +1,7 @@
+<script setup>
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+</script>
+
 <template>
   <main class="hero">
     <section class="portfolio-container" aria-labelledby="portfolio-title">
@@ -10,7 +14,7 @@
 
     <div class="avatar-outer-container">
       <div class="avatar-container">
-        <img class="avatar" src="/afbeeldingen/ikknop.png" alt="Zoë Haenen portret" />
+        <img class="avatar" :src="asset('afbeeldingen/ikknop.png')" alt="Zoë Haenen portret" />
       </div>
     </div>
   </main>

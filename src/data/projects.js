@@ -1,4 +1,4 @@
-const asset = (path) => `/${path}`
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
 
 export const projectSummaries = [
   {

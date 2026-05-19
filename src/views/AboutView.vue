@@ -1,3 +1,7 @@
+<script setup>
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+</script>
+
 <template>
   <main class="about-page">
     <section class="about-text">
@@ -35,7 +39,7 @@
     </section>
 
     <aside class="about-avatar">
-      <img src="/afbeeldingen/ikknop.png" alt="Zoë Haenen portret" />
+      <img :src="asset('afbeeldingen/ikknop.png')" alt="Zoë Haenen portret" />
     </aside>
   </main>
 </template>

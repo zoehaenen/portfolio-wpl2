@@ -1,12 +1,14 @@
 <script setup>
 import HeroPortfolio from '../components/home/HeroPortfolio.vue'
+
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
 </script>
 
 <template>
   <HeroPortfolio />
 
   <div class="privacy-link">
-    <a href="/privacy.txt" target="_blank" rel="noopener">Privacy</a>
+    <a :href="asset('privacy.txt')" target="_blank" rel="noopener">Privacy</a>
   </div>
 </template>
 

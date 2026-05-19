@@ -1,16 +1,20 @@
+<script setup>
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`
+</script>
+
 <template>
   <main class="documents-page">
     <h1>Portfolio documenten - WPL1</h1>
 
     <ul>
       <li>
-        <a href="/portfolio/situering-profiel-dvo.pdf" target="_blank" rel="noopener">
+        <a :href="asset('portfolio/situering-profiel-dvo.pdf')" target="_blank" rel="noopener">
           Situering binnen profiel Digitale Vormgever
         </a>
       </li>
 
       <li>
-        <a href="/portfolio/eindreflectie-wpl1-dvo.pdf" target="_blank" rel="noopener">
+        <a :href="asset('portfolio/eindreflectie-wpl1-dvo.pdf')" target="_blank" rel="noopener">
           Eindreflectie WPL1 DVO
         </a>
       </li>
