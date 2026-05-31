@@ -20,6 +20,12 @@ const asset = (path) => `${import.meta.env.BASE_URL}${path}`
       </li>
 
       <li>
+        <a :href="asset('portfolio/wpl1-opdracht-dashboard-cv.pdf')" target="_blank" rel="noopener">
+          WPL1 - opdracht
+        </a>
+      </li>
+
+      <li>
         <a
           :href="asset('portfolio/eindreflectie-wpl2-haenen-zoe.pdf')"
           target="_blank"
