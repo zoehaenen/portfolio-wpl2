@@ -4,7 +4,7 @@ const asset = (path) => `${import.meta.env.BASE_URL}${path}`
 
 <template>
   <main class="documents-page">
-    <h1>Portfolio documenten - WPL1</h1>
+    <h1>Portfolio documenten</h1>
 
     <ul>
       <li>
@@ -16,6 +16,16 @@ const asset = (path) => `${import.meta.env.BASE_URL}${path}`
       <li>
         <a :href="asset('portfolio/eindreflectie-wpl1-dvo.pdf')" target="_blank" rel="noopener">
           Eindreflectie WPL1 DVO
+        </a>
+      </li>
+
+      <li>
+        <a
+          :href="asset('portfolio/eindreflectie-wpl2-haenen-zoe.pdf')"
+          target="_blank"
+          rel="noopener"
+        >
+          Eindreflectie WPL2
         </a>
       </li>
     </ul>

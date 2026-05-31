@@ -183,7 +183,7 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
       <div class="project-links">
         <a
           class="project-linkout"
-          href="https://zoehaenen.github.io/missie-maasland/"
+          href="https://missiemaaslandteam16.netlify.app"
           target="_blank"
           rel="noopener"
         >
@@ -191,8 +191,8 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
         </a>
 
         <div class="project-platform-note project-progress-note">
-          Project in progress: deze website is nog niet volledig afgewerkt. Bepaalde
-          functionaliteiten werken niet online omdat de back-end lokaal opgestart moet worden.
+          Bepaalde functionaliteiten werken niet online omdat de back-end lokaal opgestart moet
+          worden.
         </div>
       </div>
     </div>
