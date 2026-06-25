@@ -47,7 +47,7 @@ const emit = defineEmits(['open'])
 .photo-thumb {
   border: 0;
   padding: 0;
-  background: transparent;
+  background: #fff;
   cursor: pointer;
   display: block;
   overflow: hidden;
@@ -60,6 +60,7 @@ const emit = defineEmits(['open'])
   height: 220px;
   object-fit: cover;
   display: block;
+  background: #fff;
   transform: scale(1);
   transition:
     transform 0.22s ease,

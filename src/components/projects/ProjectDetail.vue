@@ -16,11 +16,402 @@ const emit = defineEmits(['open-gallery'])
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path}`
 const projectByKey = Object.fromEntries(projectSummaries.map((project) => [project.key, project]))
+const maskerPoster = {
+  src: asset('afbeeldingen/masker/masker.jpeg'),
+  alt: 'Masker poster met illustratie en tekst',
+  caption: 'Poster',
+}
+const maskerIllustrations = [
+  {
+    src: asset('afbeeldingen/masker/masker-illustratie.png'),
+    alt: 'Getekende maskerillustratie',
+    caption: 'Maskerillustratie',
+  },
+  {
+    src: asset('afbeeldingen/masker/zelfportret.png'),
+    alt: 'Getekend zelfportret',
+    caption: 'Zelfportret',
+  },
+]
+const mierenjachtScreens = [
+  {
+    src: asset('afbeeldingen/mierenjacht/beginscherm.png'),
+    alt: 'Beginscherm van Mierenjacht',
+    caption: 'Beginscherm',
+  },
+  {
+    src: asset('afbeeldingen/mierenjacht/mierenhoop.png'),
+    alt: 'Ondergronds mierenhol met kamers voor Mierenjacht',
+    caption: 'Mierenhol',
+  },
+  {
+    src: asset('afbeeldingen/mierenjacht/water.png'),
+    alt: 'Regenseizoen scherm voor Mierenjacht',
+    caption: 'Regenseizoen',
+  },
+]
+const mierenjachtAvatars = [
+  { file: 'bijtje.png', name: 'Bijtje' },
+  { file: 'dragonfly.png', name: 'Dragonfly' },
+  { file: 'ghinnie.png', name: 'Ghinnie' },
+  { file: 'ladybug.png', name: 'Ladybug' },
+  { file: 'rupsie.png', name: 'Rupsie' },
+  { file: 'slakkie.png', name: 'Slakkie' },
+  { file: 'sprinkhaan.png', name: 'Sprinkhaan' },
+  { file: 'voorbeeld-avatar-icon-player.png', name: 'Player icon' },
+].map((avatar) => ({
+  src: asset(`afbeeldingen/mierenjacht/avatars/${avatar.file}`),
+  alt: `${avatar.name} avatar voor Mierenjacht`,
+  caption: avatar.name,
+}))
 </script>
 
 <template>
   <div>
-  <article v-if="props.projectKey === 'scripting'" class="project project-detail">
+  <article v-if="props.projectKey === 'mierenjacht'" class="project project-detail">
+    <div class="project-thumbnail mierenjacht-hero">
+      <img
+        class="project-img"
+        :src="projectByKey.mierenjacht.image"
+        :alt="projectByKey.mierenjacht.alt"
+        loading="lazy"
+      />
+    </div>
+
+    <header class="project-header">
+      <h1 class="project-titel">Mierenjacht</h1>
+    </header>
+
+    <div class="project-omschrijving-container">
+      <div class="project-omschrijving project-omschrijving-wide">
+        <section class="project-text-section">
+          <h2 class="project-subtitle">Beschrijving</h2>
+
+          <p>
+            Mierenjacht is een concept voor een digitaal dobbelspel waarin spelers zoveel mogelijk
+            mieren proberen te verzamelen uit een ondergronds mierenhol. Ik bedacht het spel omdat
+            mijn vrienden en ik heel graag Regenwormen spelen. Het leek me een leuke kans om dat
+            spel te vertalen naar een eigen digitale versie met een nieuwe wereld, eigen visuals en
+            een paar extra spelmechanieken.
+          </p>
+
+          <p>
+            Het project zit momenteel in de conceptuele en designfase. Ik werkte de eerste sfeer,
+            enkele schermen, avatars en de basisregels uit, maar nog niet alle schermen en visuals
+            zijn volledig afgewerkt. De game is ook nog niet gecodeerd als speelbare versie.
+          </p>
+        </section>
+
+        <section class="project-text-section">
+          <h2 class="project-subtitle">Spelidee</h2>
+
+          <p>
+            Spelers gooien met dobbelstenen en kiezen na elke worp een soort resultaat om opzij te
+            leggen. Ze proberen genoeg punten te verzamelen om een mierenkamer te pakken. Elke kamer
+            heeft een waarde, bijvoorbeeld 21, 25, 30 of 36, en die waarde staat voor het aantal
+            mieren dat je verzamelt. Om een kamer te mogen pakken, heb je minstens een mierensymbool
+            nodig; dat symbool telt als vijf punten.
+          </p>
+
+          <p>
+            De twist zit in de risico's. Wie te lang blijft gooien en geen geldige keuze meer kan
+            maken, verliest zijn beurt. Dan verschijnt de miereneter: de speler verliest zijn
+            bovenste gewonnen kamer en de hoogste beschikbare kamer uit het midden verdwijnt
+            definitief uit het spel. Daarnaast is er een regenseizoen, waarbij een kamer tijdelijk
+            onder water loopt en niet gepakt kan worden. Zo wordt de regen een tactische hindernis,
+            terwijl de miereneter echt voelt als straf voor te veel gulzigheid.
+          </p>
+        </section>
+      </div>
+
+      <div class="project-links">
+        <div class="project-platform-note">Concept en designfase</div>
+      </div>
+    </div>
+
+    <section class="project-showcase mierenjacht-showcase">
+      <h2 class="project-subtitle">Designs</h2>
+
+      <div class="mierenjacht-screen-grid">
+        <figure
+          v-for="(screen, index) in mierenjachtScreens"
+          :key="screen.src"
+          class="showcase-item"
+        >
+          <button
+            class="mierenjacht-image-button"
+            type="button"
+            :aria-label="`${screen.caption} groter bekijken`"
+            @click="
+              emit('open-gallery', {
+                images: mierenjachtScreens,
+                index,
+                title: 'Mierenjacht designs',
+              })
+            "
+          >
+            <img :src="screen.src" :alt="screen.alt" loading="lazy" />
+          </button>
+          <figcaption>{{ screen.caption }}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-showcase mierenjacht-avatar-section">
+      <h2 class="project-subtitle">Avatars</h2>
+
+      <div class="mierenjacht-avatar-grid">
+        <figure
+          v-for="(avatar, index) in mierenjachtAvatars"
+          :key="avatar.src"
+          class="showcase-item mierenjacht-avatar"
+        >
+          <button
+            class="mierenjacht-image-button"
+            type="button"
+            :aria-label="`${avatar.caption} groter bekijken`"
+            @click="
+              emit('open-gallery', {
+                images: mierenjachtAvatars,
+                index,
+                title: 'Mierenjacht avatars',
+              })
+            "
+          >
+            <img :src="avatar.src" :alt="avatar.alt" loading="lazy" />
+          </button>
+          <figcaption>{{ avatar.caption }}</figcaption>
+        </figure>
+      </div>
+    </section>
+  </article>
+
+  <article v-else-if="props.projectKey === 'schoonheidssalon'" class="project project-detail">
+    <div class="project-thumbnail schoonheidssalon-hero">
+      <img
+        class="project-img"
+        :src="projectByKey.schoonheidssalon.image"
+        :alt="projectByKey.schoonheidssalon.alt"
+        loading="lazy"
+      />
+    </div>
+
+    <header class="project-header">
+      <h1 class="project-titel">Schoonheidssalon</h1>
+    </header>
+
+    <div class="project-omschrijving-container">
+      <div class="project-omschrijving project-omschrijving-wide">
+        <section class="project-text-section">
+          <h2 class="project-subtitle">Beschrijving</h2>
+
+          <p>
+            Voor schoonheidssalon Freekje Nivelle ontwierp ik een nieuwe website die de
+            persoonlijke, rustige sfeer van het salon sterker vertaalt naar een online ervaring.
+            De oorspronkelijke website voelde functioneel, maar visueel minder verfijnd en minder
+            afgestemd op de zachte uitstraling van een beautysalon.
+          </p>
+
+          <p>
+            In mijn redesign legde ik de nadruk op verzorgde typografie, zachte roze tinten,
+            duidelijke diensten en een heldere call-to-action om een afspraak te boeken. De visuele
+            richting werd eerst uitgewerkt in Figma en daarna ontwikkeld met Vue. De website is
+            uitgewerkt voor desktop en mobile, met aandacht voor leesbaarheid, rust en een
+            consistente visuele stijl.
+          </p>
+        </section>
+
+        <section class="project-text-section">
+          <h2 class="project-subtitle">Mijn aanpak</h2>
+
+          <p>
+            Ik vertrok vanuit de bestaande informatie, zoals diensten, contactgegevens,
+            openingsuren en locatie, maar gaf de pagina een nieuwe structuur. De hero kreeg een
+            warme foto en een duidelijke boodschap, de diensten werden overzichtelijker gegroepeerd
+            en de waarden van het salon kregen een rustigere presentatie.
+          </p>
+
+          <p>
+            Door de mobiele versie compact op te bouwen en de belangrijkste acties bovenaan te
+            houden, blijft de website makkelijk bruikbaar voor bezoekers die snel een behandeling
+            willen bekijken of een afspraak willen maken.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <section class="project-showcase">
+      <h2 class="project-subtitle">Redesign</h2>
+
+      <div class="showcase-grid">
+        <figure class="showcase-item showcase-item-large">
+          <img
+            :src="asset('afbeeldingen/schoonheidssalon/desktop.png')"
+            alt="Desktop ontwerp voor de schoonheidssalon website"
+            loading="lazy"
+          />
+          <figcaption>Desktop ontwerp</figcaption>
+        </figure>
+
+        <figure class="showcase-item showcase-item-phone">
+          <img
+            :src="asset('afbeeldingen/schoonheidssalon/gsm.png')"
+            alt="Mobiel ontwerp voor de schoonheidssalon website"
+            loading="lazy"
+          />
+          <figcaption>Mobiele versie</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-showcase">
+      <h2 class="project-subtitle">Voor en na</h2>
+
+      <div class="before-after-grid">
+        <figure class="showcase-item">
+          <img
+            :src="asset('afbeeldingen/schoonheidssalon/voor.png')"
+            alt="Oorspronkelijke website van de schoonheidssalon"
+            loading="lazy"
+          />
+          <figcaption>Oorspronkelijke website</figcaption>
+        </figure>
+
+        <figure class="showcase-item">
+          <img
+            :src="asset('afbeeldingen/schoonheidssalon/hero.png')"
+            alt="Nieuwe hero voor de schoonheidssalon website"
+            loading="lazy"
+          />
+          <figcaption>Nieuwe visuele richting - Figma design</figcaption>
+        </figure>
+      </div>
+    </section>
+  </article>
+
+  <article v-else-if="props.projectKey === 'masker'" class="project project-detail">
+    <div class="project-thumbnail masker-hero masker-video-frame">
+      <video
+        class="project-video"
+        :poster="projectByKey.masker.image"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+      >
+        <source :src="asset('afbeeldingen/masker/web-demo-masker.mp4')" type="video/mp4" />
+      </video>
+    </div>
+
+    <header class="project-header">
+      <h1 class="project-titel">Masker</h1>
+    </header>
+
+    <div class="project-omschrijving-container">
+      <div class="project-omschrijving project-omschrijving-wide">
+        <section class="project-text-section">
+          <h2 class="project-subtitle">Beschrijving</h2>
+
+          <p>
+            Masker is een visueel-poetisch werk waarin beeld en tekst elkaar dragen. De poster
+            vertrekt vanuit een getekend masker dat tegelijk beschermend en confronterend aanvoelt,
+            met daaromheen een Nederlandstalige tekst/gedicht.
+          </p>
+
+          <p>
+            Door de illustratie centraal te plaatsen en de tekst errond te laten ademen, ontstaat er
+            een spanning tussen kijken en gelezen worden. Het werk onderzoekt hoe een gezicht een
+            schuilplaats kan worden, maar ook hoe moeilijk het is om dat masker weer af te zetten.
+          </p>
+
+          <p>
+            Masker onderzoekt hoe een identiteit of beschermlaag gevormd wordt naarmate we ouder
+            worden. De manier waarop we behandeld worden tijdens het opgroeien, de reacties uit onze
+            omgeving en de middelen die we meekrijgen, bepalen mee welk masker we ontwikkelen.
+            Vertrekkend vanuit rituele maskers, de Asaro Mudmen en de quote van Oscar Wilde, maakte
+            ik een interactieve uitwerking waarin een masker bij hover plaatsmaakt voor een
+            zelfportret.
+          </p>
+
+          <p>
+            Net zoals de Mudmen hun maskers en overlevingstactiek vormgaven vanuit hun omgeving,
+            toont dit project het masker als iets dat ontstaat uit wat ons omringt. Het is geen los
+            object, maar een laag die groeit uit ervaring, bescherming en aanpassing.
+          </p>
+
+          <p>
+            Tegelijk gaat het project over hoe we met dat masker omgaan in het dagelijks leven. Zijn
+            we ons bewust van het bestaan ervan, of dragen we het zonder erbij stil te staan? Het
+            masker kan invloed hebben op hoe we ons voelen, hoe we reageren en welke keuzes we
+            maken. Daardoor blijft de vraag open of het masker iets positiefs of negatiefs is: soms
+            beschermt het ons, soms beperkt het ons, en vaak doet het allebei tegelijk.
+          </p>
+
+          <p>
+            Het project speelt met de spanning tussen verbergen en tonen: het masker als
+            bescherming, vervorming en mogelijke waarheid tegelijk. Visueel werkte ik met een ruwe
+            etching-stijl, beperkte kleuren en een tekst die rond het beeld zweeft als een innerlijke
+            monoloog.
+          </p>
+
+          <p>
+            De illustraties maakte ik in Procreate. Het algemene design en de feel werkte ik uit in
+            Figma, waarna de uiteindelijke interactieve uitwerking werd gebouwd met behulp van Codex
+            (ChatGPT).
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <section class="project-showcase masker-figjam-section">
+      <h2 class="project-subtitle">Procesbord</h2>
+
+      <div class="masker-figjam-wrapper">
+        <iframe
+          src="https://embed.figma.com/board/EuB0onxsVhKU14BoTjTwnL/Untitled?node-id=0-1&embed-host=share"
+          title="FigJam procesbord voor Masker"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="project-showcase masker-showcase">
+      <h2 class="project-subtitle">Werk</h2>
+
+      <div class="masker-illustration-grid">
+        <figure
+          v-for="image in maskerIllustrations"
+          :key="image.src"
+          class="showcase-item masker-illustration"
+        >
+          <button
+            class="masker-image-button"
+            type="button"
+            :aria-label="`${image.caption} groter bekijken`"
+            @click="emit('open-gallery', { images: [image], index: 0, title: image.caption })"
+          >
+            <img :src="image.src" :alt="image.alt" loading="lazy" />
+          </button>
+          <figcaption>{{ image.caption }}</figcaption>
+        </figure>
+      </div>
+
+      <figure class="showcase-item masker-poster">
+        <button
+          class="masker-image-button masker-poster-button"
+          type="button"
+          :aria-label="`${maskerPoster.caption} groter bekijken`"
+          @click="emit('open-gallery', { images: [maskerPoster], index: 0, title: maskerPoster.caption })"
+        >
+          <img :src="maskerPoster.src" :alt="maskerPoster.alt" loading="lazy" />
+        </button>
+        <figcaption>{{ maskerPoster.caption }}</figcaption>
+      </figure>
+    </section>
+  </article>
+
+  <article v-else-if="props.projectKey === 'scripting'" class="project project-detail">
     <div class="project-thumbnail">
       <img
         class="project-img"
@@ -378,7 +769,7 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
   width: 100%;
   height: auto;
   margin-bottom: 48px;
-  background-color: rgba(128, 128, 128, 0.22);
+  background-color: #fff;
   overflow: hidden;
 }
 
@@ -388,6 +779,36 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
   object-fit: cover;
   object-position: center top;
   display: block;
+}
+
+.schoonheidssalon-hero .project-img {
+  object-position: center;
+}
+
+.mierenjacht-hero .project-img {
+  object-position: center;
+}
+
+.masker-hero {
+  background-color: #fff;
+}
+
+.masker-hero .project-img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.masker-video-frame {
+  aspect-ratio: 16 / 9;
+}
+
+.project-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  object-fit: contain;
+  object-position: center;
 }
 
 .project-omschrijving-container {
@@ -464,6 +885,177 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
 .project-linkout:hover {
   opacity: 0.6;
   transform: translateY(-1px);
+}
+
+.project-showcase {
+  margin-top: 48px;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(210px, 28%);
+  gap: 24px;
+  align-items: start;
+}
+
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.showcase-item {
+  margin: 0;
+}
+
+.showcase-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+
+.masker-showcase {
+  margin-top: 42px;
+}
+
+.mierenjacht-showcase {
+  margin-top: 46px;
+}
+
+.mierenjacht-screen-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  margin-top: 14px;
+}
+
+.mierenjacht-avatar-section {
+  margin-top: 40px;
+}
+
+.mierenjacht-avatar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.mierenjacht-image-button {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: #fff;
+  cursor: zoom-in;
+  display: block;
+  overflow: hidden;
+}
+
+.mierenjacht-image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.mierenjacht-image-button:hover img {
+  opacity: 0.92;
+  transform: scale(1.01);
+}
+
+.mierenjacht-avatar .mierenjacht-image-button {
+  aspect-ratio: 1;
+  background: #fff;
+}
+
+.mierenjacht-avatar .mierenjacht-image-button img {
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.masker-poster {
+  margin-top: 28px;
+}
+
+.masker-illustration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+  margin-top: 14px;
+}
+
+.masker-image-button {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: #fff;
+  cursor: zoom-in;
+  display: block;
+  overflow: hidden;
+}
+
+.masker-image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  object-fit: contain;
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.masker-poster-button img {
+  width: 100%;
+}
+
+.masker-illustration .masker-image-button img {
+  height: clamp(320px, 42vw, 620px);
+}
+
+.masker-image-button:hover img {
+  opacity: 0.92;
+  transform: scale(1.015);
+}
+
+.masker-figjam-section {
+  margin-top: 42px;
+}
+
+.masker-figjam-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 14px;
+  background: #fff;
+}
+
+.masker-figjam-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+}
+
+.showcase-item-phone {
+  max-width: 320px;
+  justify-self: end;
+}
+
+.showcase-item figcaption {
+  margin-top: 8px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.48);
 }
 
 .ui-pdf-wrapper {
@@ -591,6 +1183,26 @@ const projectByKey = Object.fromEntries(projectSummaries.map((project) => [proje
   .project-omschrijving,
   .animation-description {
     width: 100%;
+  }
+
+  .showcase-grid,
+  .before-after-grid,
+  .masker-illustration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mierenjacht-avatar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .masker-illustration .masker-image-button img {
+    height: auto;
+    max-height: 620px;
+  }
+
+  .showcase-item-phone {
+    max-width: 360px;
+    justify-self: start;
   }
 
   .step-item,

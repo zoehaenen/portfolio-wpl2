@@ -47,8 +47,14 @@ onBeforeUnmount(() => {
         </button>
       </div>
 
-      <div class="lightbox-stage">
-        <button class="lightbox-nav" type="button" aria-label="Vorige" @click="emit('previous')">
+      <div class="lightbox-stage" :class="{ 'is-single': images.length <= 1 }">
+        <button
+          v-if="images.length > 1"
+          class="lightbox-nav"
+          type="button"
+          aria-label="Vorige"
+          @click="emit('previous')"
+        >
           ‹
         </button>
 
@@ -61,12 +67,18 @@ onBeforeUnmount(() => {
           />
         </div>
 
-        <button class="lightbox-nav" type="button" aria-label="Volgende" @click="emit('next')">
+        <button
+          v-if="images.length > 1"
+          class="lightbox-nav"
+          type="button"
+          aria-label="Volgende"
+          @click="emit('next')"
+        >
           ›
         </button>
       </div>
 
-      <div class="lightbox-thumbs" aria-label="Miniaturen">
+      <div v-if="images.length > 1" class="lightbox-thumbs" aria-label="Miniaturen">
         <button
           v-for="(image, index) in images"
           :key="image.src"
@@ -124,6 +136,10 @@ onBeforeUnmount(() => {
   padding: 0 10px;
 }
 
+.lightbox-stage.is-single {
+  grid-template-columns: 1fr;
+}
+
 .lightbox-nav {
   border: 0;
   background: transparent;
@@ -145,6 +161,7 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #fff;
 }
 
 .lightbox-image {
@@ -152,6 +169,7 @@ onBeforeUnmount(() => {
   max-height: 100%;
   object-fit: contain;
   display: block;
+  background: #fff;
 }
 
 .lightbox-thumbs {
@@ -165,7 +183,7 @@ onBeforeUnmount(() => {
 .lightbox-thumb {
   border: 0;
   padding: 0;
-  background: transparent;
+  background: #fff;
   cursor: pointer;
   width: 80px;
   height: 56px;
@@ -185,5 +203,6 @@ onBeforeUnmount(() => {
   height: 100%;
   object-fit: cover;
   display: block;
+  background: #fff;
 }
 </style>

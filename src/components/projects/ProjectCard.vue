@@ -15,7 +15,7 @@ const emit = defineEmits(['open'])
     @keydown.enter="emit('open', project.key)"
     @keydown.space.prevent="emit('open', project.key)"
   >
-    <div class="project-thumbnail">
+    <div class="project-thumbnail" :class="{ 'project-thumbnail-contain': project.key === 'masker' }">
       <img class="project-img" :src="project.image" :alt="project.alt" loading="lazy" />
     </div>
     <div class="project-omschrijving-container">
@@ -40,7 +40,7 @@ const emit = defineEmits(['open'])
   width: 100%;
   height: auto;
   margin-bottom: 10px;
-  background-color: rgba(128, 128, 128, 0.22);
+  background-color: #fff;
   overflow: hidden;
 }
 
@@ -50,6 +50,15 @@ const emit = defineEmits(['open'])
   object-fit: cover;
   object-position: center top;
   display: block;
+}
+
+.project-thumbnail-contain {
+  aspect-ratio: 3024 / 1890;
+}
+
+.project-thumbnail-contain .project-img {
+  object-fit: contain;
+  object-position: center;
 }
 
 .project-omschrijving-container {

@@ -56,7 +56,7 @@ watch(
     <RouterLink to="/" class="brand-link" aria-label="Zoë Haenen home">
       <span class="naam-occupatie">
         <span class="naam">ZOË HAENEN</span>
-        <span class="occupatie">TOEKOMSTIG FRONT-END DEVELOPER</span>
+        <span class="occupatie">Digital Designer & Creative Web Developer</span>
       </span>
     </RouterLink>
 

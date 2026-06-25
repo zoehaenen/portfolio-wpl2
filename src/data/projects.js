@@ -10,12 +10,12 @@ export const projectSummaries = [
       'Voor Musea Maaseik werkten we aan Missie Maasland: een interactieve museumervaring die archeologie en geschiedenis op een speelse en toegankelijke manier vertaalt naar kinderen, gezinnen en scholen. Binnen dit project nam ik de rol van front-end lead op mij en werkte ik mee aan onderzoek, wireframes, Vue.js-componenten, layouts, interactieve elementen en de koppeling met de back-end API.',
   },
   {
-    key: 'scripting',
-    title: 'Scripting',
-    image: asset('afbeeldingen/il-vicolo-screen.png'),
-    alt: 'Il Vicolo project preview',
+    key: 'masker',
+    title: 'Masker',
+    image: asset('afbeeldingen/masker/masker.jpeg'),
+    alt: 'Poster met een getekend masker en Nederlandstalige tekst',
     summary:
-      'Binnen het vak Scripting ontwikkelde ik een interactieve take-away website met HTML, CSS en JavaScript, zonder frameworks. De website toont menu-items dynamisch en bevat filtering, sortering en een winkelmand beheerd via DOM-manipulatie en localStorage. Dit project benadrukt mijn groei in gestructureerd JavaScript en logisch denken binnen een front-end context.',
+      'Masker is een visueel-poetisch werk waarin tekst en illustratie samen een innerlijke ruimte oproepen. De poster combineert een monumentale maskertekening met een persoonlijke tekst rond zelfbeeld, bescherming en kwetsbaarheid.',
   },
   {
     key: 'ui',
@@ -24,6 +24,30 @@ export const projectSummaries = [
     alt: 'UI design project preview',
     summary:
       'Binnen het vak UI Design ontwierp ik de user interface van een digitale toepassing, van wireframes tot een uitgewerkt visueel design. Ik werkte een volledige taskflow en een eigen homepagina uit in Figma, met aandacht voor branding, usability en consistentie.',
+  },
+  {
+    key: 'schoonheidssalon',
+    title: 'Schoonheidssalon',
+    image: asset('afbeeldingen/schoonheidssalon/hero.png'),
+    alt: 'Redesign voor schoonheidssalon Freekje Nivelle',
+    summary:
+      'Voor een schoonheidsspecialist ontwierp ik een nieuwe responsive website met een zachte, verzorgde uitstraling. De focus lag op een duidelijke dienstenstructuur, rustige typografie, warme kleuren en een professionele online ervaring die beter aansluit bij de sfeer van het salon.',
+  },
+  {
+    key: 'mierenjacht',
+    title: 'Mierenjacht',
+    image: asset('afbeeldingen/mierenjacht/beginscherm.png'),
+    alt: 'Beginscherm van het digitale dobbelspel Mierenjacht',
+    summary:
+      'Mierenjacht is een concept voor een digitaal dobbelspel, geïnspireerd door hoe graag mijn vrienden en ik Regenwormen spelen. Ik vertaalde dat risk-and-reward gevoel naar een eigen ondergronds mierenhol met dobbelstenen, verzamelbare mierenkamers, een miereneter als strafmoment en een regenseizoen dat kamers tijdelijk blokkeert.',
+  },
+  {
+    key: 'scripting',
+    title: 'Scripting',
+    image: asset('afbeeldingen/il-vicolo-screen.png'),
+    alt: 'Il Vicolo project preview',
+    summary:
+      'Binnen het vak Scripting ontwikkelde ik een interactieve take-away website met HTML, CSS en JavaScript, zonder frameworks. De website toont menu-items dynamisch en bevat filtering, sortering en een winkelmand beheerd via DOM-manipulatie en localStorage. Dit project benadrukt mijn groei in gestructureerd JavaScript en logisch denken binnen een front-end context.',
   },
   {
     key: 'fotografie',

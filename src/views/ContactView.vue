@@ -6,9 +6,6 @@
 
         <h1 class="contact-title">Let's talk.</h1>
 
-        <p class="contact-copy">
-          Voor samenwerkingen, vragen of feedback. Kort bericht is perfect.
-        </p>
       </div>
 
       <div class="contact-right" aria-label="Contact links">
@@ -31,9 +28,30 @@
               @koetje0
             </a>
           </li>
-        </ul>
 
-        <div class="contact-note">Als je mailt: zet gerust “Portfolio” in je onderwerpregel.</div>
+          <li class="contact-item">
+            <span class="contact-key">LinkedIn</span>
+            <a
+              class="contact-link contact-link-with-icon"
+              href="https://www.linkedin.com/in/zo%C3%ABhaenen"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn profiel van Zoë Haenen"
+            >
+              <svg
+                class="linkedin-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.28ZM5.32 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.54V9H7.1v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"
+                />
+              </svg>
+              <span>zoëhaenen</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
@@ -110,7 +128,9 @@
 }
 
 .contact-link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 14px;
   letter-spacing: 0.2px;
   padding-bottom: 2px;
@@ -121,18 +141,17 @@
     transform 0.15s ease;
 }
 
+.linkedin-icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
 .contact-link:hover {
   opacity: 0.65;
   border-color: rgba(0, 0, 0, 0.18);
   transform: translateY(-1px);
-}
-
-.contact-note {
-  margin-top: 18px;
-  font-size: 12px;
-  line-height: 1.6;
-  opacity: 0.55;
-  max-width: 40ch;
 }
 
 @media (max-width: 1000px) {
